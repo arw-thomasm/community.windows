@@ -54,14 +54,14 @@ Function Convert-MacAddress {
 
     if (($mac -match $pat) -and ($mac.Length -ge 12) -and ($mac.Length % 2 -eq 0)) {
         # The string is a valid client identifier, so we prepare the string to represent the *-*-* pattern for this client id
-	for ($i = 2; $i -lt $mac.Length; $i+=3) {
+        for ($i = 2; $i -lt $mac.Length; $i+=3) {
             $mac = $mac.Insert($i,'-')
         }
 
-	return $mac
+        return $mac
     }
     else {
-	# The string is not a valid client identifier
+    # The string is not a valid client identifier
         return $false
     }
 }
